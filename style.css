@@ -1,0 +1,469 @@
+/* style.css */
+
+/* --- Google Fonts Import --- */
+/* Poppins for headings: Clean, modern, strong */
+/* Open Sans for body text: Highly readable, friendly */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@400;600;700;800&display=swap');
+
+
+/* --- Base Styles & Variables --- */
+:root {
+    /* Color Palette */
+    --primary-blue: #2A4365; /* Dark blue, almost navy for main elements */
+    --secondary-blue: #4299E1; /* Brighter blue for accents */
+    --accent-green: #68D391; /* A nice green for highlights */
+    --text-dark: #2D3748;    /* Dark gray for main text */
+    --text-light: #4A5568;   /* Slightly lighter gray for secondary text */
+    --bg-light: #F7FAFC;     /* Very light gray background */
+    --bg-white: #FFFFFF;     /* Pure white for content blocks */
+    --border-color: #E2E8F0; /* Light border color */
+    --shadow-light: rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    --shadow-medium: rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Primary body font */
+    line-height: 1.75; /* Improved readability */
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+}
+
+/* Global Container */
+.container {
+    max-width: 1300px; /* Slightly wider */
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem; /* Consistent padding */
+}
+
+/* --- Hero Section Styles (New!) --- */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #1A365D 100%); /* Gradient background */
+    color: var(--bg-white);
+    text-align: center;
+    padding: 6rem 1.5rem; /* More vertical padding */
+    margin-bottom: 4rem; /* Space before content */
+    box-shadow: 0 8px 16px var(--shadow-medium);
+}
+
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4.5rem; /* Very large and impactful */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Stronger shadow for pop */
+}
+
+.hero-subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem; /* Readable subtitle */
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    opacity: 0.9;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: var(--secondary-blue);
+    color: var(--bg-white);
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button:hover {
+    background-color: #3182CE; /* Slightly darker blue */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+
+/* --- General Section Styles --- */
+.main-title { /* Kept for other pages if they don't have hero */
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 4rem;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.section-block {
+    margin-bottom: 5rem;
+    background-color: var(--bg-white);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px var(--shadow-light); /* Softer, larger shadow */
+    padding: 3.5rem; /* More generous padding */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-block:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 15px 30px var(--shadow-medium); /* Enhanced shadow on hover */
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem; /* Refined size */
+    font-weight: 700;
+    color: var(--secondary-blue);
+    margin-bottom: 1.8rem;
+    border-bottom: 3px solid var(--border-color); /* Matches theme */
+    padding-bottom: 0.75rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile first */
+    gap: 3rem; /* Increased gap */
+    align-items: center;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .section-block:nth-child(even) .content-grid {
+        direction: rtl;
+    }
+    .section-block:nth-child(even) .content-grid > div:first-child {
+        direction: ltr;
+    }
+}
+
+.subsection-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.text-content {
+    font-size: 1.1rem; /* Consistent body text size */
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* --- Image Styles --- */
+.image-container {
+    width: 100%;
+    height: 320px; /* Slightly more height */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px var(--shadow-light); /* More subtle shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--border-color);
+}
+
+.image-spacing {
+    margin-top: 2rem;
+}
+
+.responsive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Footer Text Styles --- */
+.footer-text {
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    padding: 2rem; /* More padding */
+    background-color: var(--bg-white); /* White background for footer block */
+    border-radius: 10px;
+    box-shadow: 0 5px 10px var(--shadow-light);
+}
+
+/* --- Navigation Header Styles --- */
+.header {
+    background-color: var(--primary-blue); /* Dark blue */
+    color: var(--bg-white);
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 8px var(--shadow-medium); /* Stronger shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem; /* Slightly larger logo */
+    font-weight: 700;
+    color: var(--bg-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--secondary-blue); /* Highlight on hover */
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2.5rem; /* Increased gap */
+}
+
+.nav-item a {
+    color: var(--bg-white);
+    text-decoration: none;
+    font-size: 1.05rem; /* Slightly larger nav links */
+    font-weight: 500;
+    padding: 0.75rem 1.25rem; /* More generous clickable area */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-item a:hover {
+    background-color: var(--secondary-blue); /* Brighter blue hover */
+    color: var(--bg-white);
+    transform: translateY(-2px);
+}
+
+.nav-item a.active {
+    background-color: var(--secondary-blue); /* Active state */
+    color: var(--bg-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Nav Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--bg-white);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 767px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary-blue);
+        position: absolute;
+        top: 65px; /* Adjust based on actual header height */
+        left: 0;
+        padding: 1.5rem 0;
+        box-shadow: 0 8px 16px var(--shadow-medium);
+        text-align: center; /* Center links in mobile menu */
+    }
+
+    .nav-list.open {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 0.75rem 0;
+    }
+
+    .nav-item a {
+        padding: 1rem 1.5rem;
+        width: 90%; /* Make links wider for touch targets */
+        margin: 0 auto; /* Center wide links */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+
+/* --- Accordion Styles (from previous step, refined) --- */
+.intro-text {
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 1.5rem auto 3.5rem auto; /* Adjusted spacing */
+    color: var(--text-light);
+}
+
+.accordion {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow-light); /* Softer shadow */
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    background-color: #F0F4F8; /* A very light blue-gray */
+    padding: 1.2rem 2rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem; /* Larger heading for accordion */
+    font-weight: 600;
+    color: var(--primary-blue);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #E2E8F0; /* Slightly darker hover */
+    color: var(--secondary-blue);
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.accordion-header .icon {
+    font-size: 2rem; /* Larger icon */
+    transition: transform 0.3s ease;
+    color: var(--secondary-blue);
+}
+
+.accordion-content {
+    background-color: var(--bg-white);
+    padding: 0 2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-content p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem; /* Slightly smaller for detailed content */
+    color: var(--text-light);
+    padding-bottom: 0;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 600px; /* Increased max-height for more content */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.accordion-item.active .accordion-header .icon {
+    transform: rotate(45deg);
+}
+
+/* --- Responsive Adjustments --- */
+
+/* --- On-Page Navigation Bar (Table of Contents) --- */
+#on-page-nav-placeholder {
+    background-color: var(--primary-blue); /* Mismo azul oscuro del header */
+    box-shadow: 0 2px 5px var(--shadow-medium);
+    position: sticky; /* Hace que la barra se quede pegada al scroll */
+    top: 0px; /* Se pega justo debajo del header principal (el header es sticky top:0) */
+    z-index: 999; /* Justo debajo del header pero por encima del contenido */
+    padding: 0.75rem 0; /* Padding vertical */
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas si hay muchos enlaces */
+    white-space: nowrap; /* Evita que los enlaces se rompan en varias líneas */
+    -webkit-overflow-scrolling: touch; /* Mejora el scroll en iOS */
+}
+
+#on-page-nav-placeholder::-webkit-scrollbar {
+    height: 6px; /* Altura del scrollbar horizontal */
+}
+
+#on-page-nav-placeholder::-webkit-scrollbar-thumb {
+    background: var(--secondary-blue); /* Color del "pulgar" del scrollbar */
+    border-radius: 3px;
+}
+
+#on-page-nav-placeholder::-webkit-scrollbar-track {
+    background: #001a35; /* Color de la "pista" del scrollbar */
+}
+
+.on-page-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 1.5rem; /* Padding lateral para los enlaces */
+    display: flex;
+    justify-content: center; /* Centra los enlaces */
+    gap: 1.5rem; /* Espacio entre enlaces */
+}
+
+.on-page-nav-item a {
+    color: var(--bg-white);
+    text-decoration: none;
+    font-size: 0.95rem; /* Tamaño de fuente ligeramente más pequeño */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid transparent; /* Para evitar salto al activarse el borde */
+}
+
+.on-page-nav-item a:hover {
+    background-color: var(--secondary-blue);
+    color: var(--bg-white);
+}
+
+.on-page-nav-item a.active-on-page {
+    background-color: var(--secondary-blue);
+    color: var(--bg-white);
+    border: 1px solid var(--accent-green); /* Borde que resalta la sección activa */
+    font-weight: 600;
+}
+
+/* Ocultar en pantallas muy pequeñas si la barra es demasiado intrusiva */
+@media (max-width: 600px) {
+    #on-page-nav-placeholder {
+        padding: 0.5rem 0;
+    }
+    .on-page-nav-list {
+        gap: 0.8rem;
+    }
+    .on-page-nav-item a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.7rem;
+    }
+}
+
